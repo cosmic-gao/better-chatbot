@@ -2,6 +2,7 @@ import "server-only";
 
 import { createOllama } from "ollama-ai-provider-v2";
 import { openai } from "@ai-sdk/openai";
+import { createDeepSeek } from "@ai-sdk/deepseek";
 import { google } from "@ai-sdk/google";
 import { anthropic } from "@ai-sdk/anthropic";
 import { xai } from "@ai-sdk/xai";
@@ -28,8 +29,15 @@ const groq = createGroq({
   baseURL: process.env.GROQ_BASE_URL || "https://api.groq.com/openai/v1",
   apiKey: process.env.GROQ_API_KEY,
 });
+const deepseek = createDeepSeek({
+  baseURL: process.env.DEEPSEEK_BASE_URL || "https://api.deepseek.com/v1",
+  apiKey: process.env.DEEPSEEK_API_KEY,
+});
 
 const staticModels = {
+  deepseek: {
+    "deepseek-chat": deepseek("deepseek-chat"),
+  },
   openai: {
     "gpt-4.1": openai("gpt-4.1"),
     "gpt-4.1-mini": openai("gpt-4.1-mini"),
