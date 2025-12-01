@@ -366,6 +366,10 @@ export function ChatMentionInputSuggestion({
           label = "table";
           description = "Create a table";
           break;
+        case DefaultToolName.CreateSandpack:
+          label = "sandpack";
+          description = "Create a sandpack";
+          break;
         case DefaultToolName.WebSearch:
           label = "web-search";
           description = "Search the web";

@@ -58,6 +58,7 @@
     "@ai-sdk/xai": "^2.0.38",
     "@aws-sdk/client-s3": "^3.940.0",
     "@aws-sdk/s3-request-presigner": "^3.940.0",
+    "@codesandbox/sandpack-react": "^2.20.0",
     "@google/genai": "^1.30.0",
     "@modelcontextprotocol/sdk": "^1.23.0",
     "@openrouter/ai-sdk-provider": "^1.2.7",

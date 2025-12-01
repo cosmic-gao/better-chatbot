@@ -695,6 +695,17 @@ const InteractiveTable = dynamic(
   },
 );
 
+const InteractiveSandpack = dynamic(
+  () =>
+    import("./tool-invocation/interactive-sandpack").then(
+      (mod) => mod.InteractiveSandpack,
+    ),
+  {
+    ssr: false,
+    loading,
+  },
+);
+
 const WebSearchToolInvocation = dynamic(
   () =>
     import("./tool-invocation/web-search").then(
@@ -922,6 +933,13 @@ export const ToolMessagePart = memo(
           case DefaultToolName.CreateTable:
             return (
               <InteractiveTable
+                key={`${toolCallId}-${toolName}`}
+                {...(input as any)}
+              />
+            );
+          case DefaultToolName.CreateSandpack:
+            return (
+              <InteractiveSandpack
                 key={`${toolCallId}-${toolName}`}
                 {...(input as any)}
               />
